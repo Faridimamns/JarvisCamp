@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\TaskController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,11 +14,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view ('welcome');
-});
+// Route::get('/', function () {
+//     return view ('welcome');
+// });
 
+// Route::get('/hi', function () {
+//     return view ('hello');
+// });
 
-Route::get('/hi', function(){
-    return view ('hello');
-});
+Route::get('/',[TaskController::class, 'index' ]);
+Route::get('/task/{id}',[TaskController::class, 'show' ]);
