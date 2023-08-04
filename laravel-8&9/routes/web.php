@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Post;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,9 +24,9 @@ Route::get('/', function () {
 });
 
 Route::get('/users', function () {
-
-    $data =[
-        "title" => "users"
-    ];
-    return view('contents.users',$data );
+    return view('contents.users',[
+        "title" => "users",
+        "users" => User::all(),
+        "posts" => Post::all()
+    ] );
 });
