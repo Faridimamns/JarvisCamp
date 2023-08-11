@@ -19,7 +19,10 @@ class PostFactory extends Factory
         return [
             'title' => fake()->title(),
             'description' => fake()->paragraph(),
-            'author' => fake()->name()
+            'author' => fake()->name(),
+            'category_id' => fake()->numberBetween(1, 9),
+            'user_id' => fake()->numberBetween(1, 9),
+
         ];
     }
 }
